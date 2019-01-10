@@ -21,7 +21,7 @@ public class DeployController {
     @ResponseBody
     @RequestMapping(value="/test1",method = RequestMethod.GET)
     public String dealRequest(String msg){
-        //调用MyServeice对象方法将msg入队
+        //调用MsgQueueService对象方法将msg入队
         msgQueueService.pushQueue(msg);
         return msgQueueService.doOneCmd();
     }
@@ -29,7 +29,6 @@ public class DeployController {
     @ResponseBody
     @RequestMapping(value="/test2",method = RequestMethod.GET)
     public String dealRequest2(){
-        //调用MyServeice对象方法将msg入队
         int size = msgQueueService.getSize();
         String string = "";
         if(size!=0)

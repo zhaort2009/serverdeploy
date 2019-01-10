@@ -35,10 +35,10 @@ public class RunShellUtil {
             // 读取输出
             String line = null;
             while ((line = bufrIn.readLine()) != null) {
-                result.append(line).append("<br/>");
+                result.append(line).append("<br/>");   //在网页中进行换行，可以考虑用‘\n’
             }
             while ((line = bufrError.readLine()) != null) {
-                result.append(line).append("\n");
+                result.append(line).append("<br/>");
             }
 
         } catch (Exception e) {

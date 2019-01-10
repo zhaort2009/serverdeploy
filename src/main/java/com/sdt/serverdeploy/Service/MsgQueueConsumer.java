@@ -8,9 +8,6 @@ import java.util.concurrent.*;
 public class MsgQueueConsumer {
     private ExecutorService mExecutor = Executors.newSingleThreadExecutor();
 
-    public void doWork(Runnable task){
-        mExecutor.execute(task);
-    }
 
     public String doCallableWork(Callable task){
         Future<String> mFuture = mExecutor.submit(task);

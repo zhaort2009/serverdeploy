@@ -26,7 +26,6 @@ public class MsgQueueService {
     @Autowired
     public void setMsgQueueConsumer(MsgQueueConsumer myConsumer){
         this.mMsgConsumer = myConsumer;
-        //this.startService();
     }
 
     public void pushQueue(String msg){
@@ -55,10 +54,15 @@ public class MsgQueueService {
         }
         return sb.toString().substring(0,sb.length()-1);
     }
+
     public int getSize(){
         return mMsgQueue.size();
     }
 
+    /**
+     * @return 每一条消息的处理结果
+     * @desc 处理结果通过Future返回，doCallableWork方法会在未得到计算结果前阻塞
+     */
     public String doOneCmd(){
         String result =  mMsgConsumer.doCallableWork(new Callable() {
             @Override
@@ -69,7 +73,6 @@ public class MsgQueueService {
                     message = popQueue();
                     MsgHandler msgHandler = new MsgHandler(message);
                     ret = msgHandler.dealMsg();
-
                     System.out.println(Thread.currentThread().getName()+":"+message+" :ret="+ret);
                 }
                 return ret;
@@ -77,24 +80,5 @@ public class MsgQueueService {
         });
         return result;
     }
-
-
-    public void startService(){
-        mMsgConsumer.doWork(new Runnable() {
-            @Override
-            public void run() {
-                String message;
-                while(true) {
-                    if (getSize() > 0) {
-                        message = popQueue();
-                        MsgHandler msgHandler = new MsgHandler(message);
-                        msgHandler.dealMsg();
-                        System.out.println(Thread.currentThread().getName()+":"+message);
-                    }
-                }
-            }
-        });
-    }
-
 
 }

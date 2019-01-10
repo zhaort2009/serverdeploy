@@ -9,6 +9,11 @@ public class MsgHandler {
     public MsgHandler(String mMessage) {
         this.mMessage = mMessage;
     }
+
+    /**
+     * @return 返回脚本执行结果，只对check，start，stop三种消息进行执行脚本操作
+     * @desc dirStr 需要根据脚本存放路径修改
+     */
     public String dealMsg(){
         String dirStr = "/home/zhaort/MyService_jar/";
         File file = new File(dirStr);
