@@ -1,0 +1,376 @@
+2019-01-11 14:29:49,271 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 10546 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 14:29:49,276 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 14:29:50,331 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 14:29:50,348 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:29:50,362 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 14:29:50,362 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 14:29:50,375 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 14:29:50,452 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 14:29:50,452 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1125 ms
+2019-01-11 14:29:50,520 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 14:29:50,524 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 14:29:50,675 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:29:50,826 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:29:50,906 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 14:29:50,908 [main] ERROR o.apache.catalina.util.LifecycleBase.log - Failed to start component [Connector[HTTP/1.1-8081]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1001)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.sdt.serverdeploy.ServerdeployApplication.main(ServerdeployApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: java.net.BindException: 地址已在使用
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1149)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:561)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:998)
+	... 22 common frames omitted
+2019-01-11 14:29:50,914 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:29:50,914 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+2019-01-11 14:29:50,921 [main] INFO  o.apache.catalina.util.LifecycleBase.log - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-01-11 14:29:50,922 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:29:50,922 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Destroying ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:29:50,924 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-11 14:29:50,925 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter.report - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8081 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8081, or configure this application to listen on another port.
+
+2019-01-11 14:29:50,929 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:31:05,287 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 10590 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 14:31:05,291 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 14:31:06,323 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 14:31:06,338 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:31:06,351 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 14:31:06,352 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 14:31:06,365 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 14:31:06,449 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 14:31:06,450 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1118 ms
+2019-01-11 14:31:06,504 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 14:31:06,508 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 14:31:06,663 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:31:06,839 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:31:06,926 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 14:31:06,948 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 14:31:06,953 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 1.929 seconds (JVM running for 2.47)
+2019-01-11 14:31:30,530 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 14:31:30,531 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 14:31:30,535 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 4 ms
+2019-01-11 14:31:30,561 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 14:31:30,562 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 14:31:30,568 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 14:33:42,790 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:44:53,091 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 11502 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 14:44:53,096 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 14:44:54,261 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 14:44:54,276 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:44:54,286 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 14:44:54,287 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 14:44:54,299 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 14:44:54,369 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 14:44:54,369 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1225 ms
+2019-01-11 14:44:54,422 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 14:44:54,426 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 14:44:54,572 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:44:54,731 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:44:54,825 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 14:44:54,840 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 14:44:54,843 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 2.03 seconds (JVM running for 2.535)
+2019-01-11 14:45:03,190 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 14:45:03,190 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 14:45:03,195 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 5 ms
+2019-01-11 14:45:03,219 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:start
+2019-01-11 14:45:03,220 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:start
+2019-01-11 14:45:03,224 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：start succeed!
+2019-01-11 14:45:35,946 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:54:08,341 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 12125 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 14:54:08,344 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 14:54:09,342 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 14:54:09,358 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:54:09,369 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 14:54:09,370 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 14:54:09,382 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 14:54:09,461 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 14:54:09,462 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1081 ms
+2019-01-11 14:54:09,520 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 14:54:09,524 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 14:54:09,708 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 14:54:09,872 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 14:54:09,945 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 14:54:09,959 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 14:54:09,962 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 1.865 seconds (JVM running for 2.359)
+2019-01-11 14:54:16,998 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 14:54:16,999 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 14:54:17,003 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 4 ms
+2019-01-11 14:54:17,030 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 14:54:17,031 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 14:54:17,032 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：
+2019-01-11 14:54:17,036 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 14:56:16,182 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:01:46,819 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 12619 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 15:01:46,825 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 15:01:47,836 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 15:01:47,850 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:01:47,860 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 15:01:47,861 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 15:01:47,872 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 15:01:47,955 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 15:01:47,955 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1074 ms
+2019-01-11 15:01:48,032 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 15:01:48,036 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 15:01:48,180 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:01:48,328 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:01:48,405 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 15:01:48,425 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 15:01:48,429 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 1.873 seconds (JVM running for 2.376)
+2019-01-11 15:01:57,840 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 15:01:57,840 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 15:01:57,844 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 4 ms
+2019-01-11 15:01:57,870 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:01:57,871 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:01:57,872 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:01:57,888 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 15:02:13,216 [http-nio-8081-exec-3] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:start
+2019-01-11 15:02:13,216 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:start
+2019-01-11 15:02:13,216 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:02:13,218 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：start succeed!
+2019-01-11 15:02:49,442 [http-nio-8081-exec-4] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:02:49,442 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:02:49,442 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:02:49,462 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：zhaort   12704  1717  0 15:02 pts/29   00:00:00 java -jar MyService.jar<br/>
+2019-01-11 15:02:58,946 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:03:55,753 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 12889 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 15:03:55,757 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 15:03:56,797 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 15:03:56,818 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:03:56,836 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 15:03:56,836 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 15:03:56,849 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 15:03:56,942 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 15:03:56,943 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1136 ms
+2019-01-11 15:03:57,021 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 15:03:57,026 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 15:03:57,177 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:03:57,349 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:03:57,443 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 15:03:57,458 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 15:03:57,462 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 2.014 seconds (JVM running for 2.516)
+2019-01-11 15:04:06,709 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 15:04:06,709 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 15:04:06,715 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 5 ms
+2019-01-11 15:04:06,741 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:04:06,742 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:04:06,743 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:04:06,758 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：zhaort   12704  1717  0 15:02 pts/29   00:00:00 java -jar MyService.jar<br/>
+2019-01-11 15:04:18,023 [http-nio-8081-exec-2] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:start
+2019-01-11 15:04:18,024 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:start
+2019-01-11 15:04:18,024 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:04:18,026 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：start succeed!
+2019-01-11 15:04:24,753 [http-nio-8081-exec-3] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:stop
+2019-01-11 15:04:24,754 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:stop
+2019-01-11 15:04:24,754 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:04:24,769 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：stop succeed!
+2019-01-11 15:04:56,629 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:17:44,471 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 13785 (/home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/.m2/repository/com/sdt/serverdeploy/0.0.1-SNAPSHOT)
+2019-01-11 15:17:44,475 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 15:17:45,643 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 15:17:45,659 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:17:45,676 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 15:17:45,677 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 15:17:45,688 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 15:17:45,768 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 15:17:45,769 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1248 ms
+2019-01-11 15:17:45,836 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 15:17:45,840 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 15:17:45,983 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:17:46,219 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:17:46,224 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 15:17:46,239 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 15:17:46,242 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 2.031 seconds (JVM running for 2.541)
+2019-01-11 15:17:53,242 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 15:17:53,242 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 15:17:53,247 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 4 ms
+2019-01-11 15:17:53,275 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:17:53,275 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:17:53,276 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:17:53,293 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 15:17:58,589 [http-nio-8081-exec-3] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:start
+2019-01-11 15:17:58,589 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:start
+2019-01-11 15:17:58,590 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:17:58,593 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：start succeed!
+2019-01-11 15:18:02,186 [http-nio-8081-exec-2] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:18:02,187 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:18:02,187 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:18:02,206 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：zhaort   13836  1717  1 15:17 pts/31   00:00:00 java -jar MyService.jar<br/>
+2019-01-11 15:18:23,813 [http-nio-8081-exec-4] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:stop
+2019-01-11 15:18:23,813 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:stop
+2019-01-11 15:18:23,813 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:18:23,831 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：stop succeed!
+2019-01-11 15:18:28,166 [http-nio-8081-exec-5] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:18:28,166 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:18:28,167 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:18:28,179 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 15:18:50,684 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:34:16,592 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 14424 (/home/zhaort/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/0.0.1-SNAPSHOT)
+2019-01-11 15:34:16,597 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 15:34:17,612 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 15:34:17,627 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:17,639 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 15:34:17,640 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 15:34:17,651 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 15:34:17,721 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 15:34:17,722 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1082 ms
+2019-01-11 15:34:17,779 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 15:34:17,783 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 15:34:17,981 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:34:18,194 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:18,207 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 15:34:18,210 [main] ERROR o.apache.catalina.util.LifecycleBase.log - Failed to start component [Connector[HTTP/1.1-8081]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1001)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:311)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:164)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.sdt.serverdeploy.ServerdeployApplication.main(ServerdeployApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+Caused by: java.net.BindException: 地址已在使用
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1067)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1149)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:561)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:998)
+	... 22 common frames omitted
+2019-01-11 15:34:18,217 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Pausing ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:18,217 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+2019-01-11 15:34:18,228 [main] INFO  o.apache.catalina.util.LifecycleBase.log - The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+2019-01-11 15:34:18,228 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Stopping ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:18,229 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Destroying ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:18,232 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-01-11 15:34:18,234 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter.report - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8081 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8081, or configure this application to listen on another port.
+
+2019-01-11 15:34:18,237 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:34:43,932 [main] INFO  c.s.s.ServerdeployApplication.logStarting - Starting ServerdeployApplication v0.0.1-SNAPSHOT on zhaort-ThinkPad-T540p with PID 14515 (/home/zhaort/0.0.1-SNAPSHOT/serverdeploy-0.0.1-SNAPSHOT.jar started by zhaort in /home/zhaort/0.0.1-SNAPSHOT)
+2019-01-11 15:34:43,937 [main] INFO  c.s.s.ServerdeployApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+2019-01-11 15:34:44,983 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize - Tomcat initialized with port(s): 8081 (http)
+2019-01-11 15:34:44,998 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Initializing ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:45,012 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+2019-01-11 15:34:45,013 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/9.0.13
+2019-01-11 15:34:45,024 [main] INFO  o.a.c.core.AprLifecycleListener.log - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-01-11 15:34:45,100 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2019-01-11 15:34:45,101 [main] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext - Root WebApplicationContext: initialization completed in 1113 ms
+2019-01-11 15:34:45,168 [main] INFO  c.s.s.Service.MsgQueueService.<init> - mQueue initial
+2019-01-11 15:34:45,173 [main] INFO  c.s.s.Controller.DeployController.setMsgQueueService - Injected!
+2019-01-11 15:34:45,329 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize - Initializing ExecutorService 'applicationTaskExecutor'
+2019-01-11 15:34:45,496 [main] INFO  o.a.coyote.http11.Http11NioProtocol.log - Starting ProtocolHandler ["http-nio-8081"]
+2019-01-11 15:34:45,502 [main] INFO  o.a.tomcat.util.net.NioSelectorPool.log - Using a shared selector for servlet write/read
+2019-01-11 15:34:45,518 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start - Tomcat started on port(s): 8081 (http) with context path ''
+2019-01-11 15:34:45,521 [main] INFO  c.s.s.ServerdeployApplication.logStarted - Started ServerdeployApplication in 1.906 seconds (JVM running for 2.448)
+2019-01-11 15:34:54,628 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-01-11 15:34:54,628 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Initializing Servlet 'dispatcherServlet'
+2019-01-11 15:34:54,635 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - Completed initialization in 7 ms
+2019-01-11 15:34:54,661 [http-nio-8081-exec-1] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:34:54,662 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:34:54,664 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:34:54,678 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：zhaort   14115  1717  0 15:21 pts/0    00:00:00 java -jar MyService.jar<br/>
+2019-01-11 15:35:01,116 [http-nio-8081-exec-3] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:stop
+2019-01-11 15:35:01,117 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:stop
+2019-01-11 15:35:01,117 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:35:01,129 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：stop succeed!
+2019-01-11 15:35:05,595 [http-nio-8081-exec-4] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:35:05,596 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:35:05,596 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:35:05,610 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 15:36:02,245 [http-nio-8081-exec-5] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:36:02,246 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:36:02,246 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:36:02,259 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 15:36:08,666 [http-nio-8081-exec-6] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:start
+2019-01-11 15:36:08,667 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:start
+2019-01-11 15:36:08,667 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:36:08,672 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：start succeed!
+2019-01-11 15:38:36,495 [http-nio-8081-exec-8] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:38:36,496 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:38:36,496 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:38:36,511 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：zhaort   14614  1717  0 15:36 pts/18   00:00:00 java -jar MyService.jar<br/>
+2019-01-11 15:38:40,966 [http-nio-8081-exec-9] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:stop
+2019-01-11 15:38:40,966 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:stop
+2019-01-11 15:38:40,967 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:38:40,980 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：stop succeed!
+2019-01-11 15:38:45,027 [http-nio-8081-exec-10] INFO  c.s.s.Service.MsgQueueService.pushQueue - Push:check
+2019-01-11 15:38:45,028 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.popQueue - Pop:check
+2019-01-11 15:38:45,028 [pool-1-thread-1] INFO  c.s.serverdeploy.Utility.MsgHandler.dealMsg - 脚本路径：/opt/MyService_jar/
+2019-01-11 15:38:45,041 [pool-1-thread-1] INFO  c.s.s.Service.MsgQueueService.call - 一条消息处理完毕，返回结果：no server running
+2019-01-11 15:39:08,520 [Thread-3] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown - Shutting down ExecutorService 'applicationTaskExecutor'
